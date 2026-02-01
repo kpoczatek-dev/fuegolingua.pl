@@ -22,10 +22,14 @@
 
     .hamburger {
         display: block;
-        font-size: 1.8rem;
         color: var(--primary-red);
         cursor: pointer;
         padding: 5px;
+    }
+    
+    .hamburger svg {
+        width: 30px;
+        height: 30px;
     }
 
     .nav-links {
