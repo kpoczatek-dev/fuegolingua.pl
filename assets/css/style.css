@@ -638,22 +638,22 @@ select:focus {
 
 .about-text p {
     font-size: 1.1rem;
-    color: #555;
+    color: #212121; /* Darkened from #555 for better contrast */
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
 
 .about-text strong {
-    color: var(--primary-red);
+    color: #b71c1c; /* Slightly darker red for contrast */
 }
 
 .about-text .signature {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--text-dark);
+    color: #000; /* Pure black for max contrast */
     margin-top: 3rem;
     font-style: italic;
-    background: linear-gradient(120deg, rgba(255, 215, 64, 0.4) 0%, rgba(255, 215, 64, 0) 100%);
+    background: linear-gradient(120deg, rgba(255, 215, 64, 0.6) 0%, rgba(255, 215, 64, 0.1) 100%); /* Slightly more opaque yellow */
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;

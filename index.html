@@ -21,20 +21,28 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logofoto.png">
 
-    <!-- Fonts -->
+    <!-- Fonts (Non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=3.2">
-    <link rel="stylesheet" href="assets/css/media.css?v=3.2">
+    <!-- CSS (Critical) -->
+    <link rel="stylesheet" href="assets/css/style.css?v=3.3">
+    <link rel="stylesheet" href="assets/css/media.css?v=3.3">
 
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Icons (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -43,7 +51,8 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#hero">
-                    <img src="assets/images/logohero.png" alt="Fuego Lingua" class="header-logo">
+                    <img src="assets/images/logohero.png" alt="Fuego Lingua" class="header-logo" width="150"
+                        height="45">
                 </a>
             </div>
             <ul class="nav-links">
@@ -58,150 +67,154 @@
         </nav>
     </header>
 
-    <section id="hero" class="hero-section">
-        <div class="hero-content">
-            <!-- Hero image is critical (LCP), do not lazy load -->
-            <img src="assets/images/logofoto.png" alt="Fuego Lingua - Tancerka" class="hero-logo-img">
-            <h1 class="hero-title">Fuego Lingua</h1>
-            <p class="hero-subtitle">Spanish Language Teacher</p>
-            <p class="hero-text">Ucz się hiszpańskiego tak, jak się go czuje:<br>z energią, rytmem i prawdziwymi
-                emocjami.</p>
-            <a href="#contact" class="btn-primary">Rozpocznij Naukę</a>
-        </div>
-    </section>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <!-- Hero image is critical (LCP), do not lazy load, high priority -->
+                <img src="assets/images/logofoto.png" alt="Fuego Lingua - Tancerka" class="hero-logo-img" width="320"
+                    height="320" fetchpriority="high">
+                <h1 class="hero-title">Fuego Lingua</h1>
+                <p class="hero-subtitle">Spanish Language Teacher</p>
+                <p class="hero-text">Ucz się hiszpańskiego tak, jak się go czuje:<br>z energią, rytmem i prawdziwymi
+                    emocjami.</p>
+                <a href="#contact" class="btn-primary">Rozpocznij Naukę</a>
+            </div>
+        </section>
 
-    <!-- ... (rest of sections) ... -->
-    <!-- I am not rewriting the whole file to avoid huge token usage, targeting specific cleanup -->
-
-    <!-- Footer cleanup and script defer is handled by the browser parser usually efficiently at the end -->
-    <!-- Removing test comment -->
-
-    <section id="offer" class="section offer-section">
-        <div class="container">
-            <h2 class="section-title">Co oferuję?</h2>
-            <div class="offer-grid">
-                <div class="offer-card">
-                    <span class="offer-emoji">🇪🇸</span>
-                    <h3>Hiszpański od A1 do C1</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">💬</span>
-                    <h3>Konwersacje od pierwszych zajęć</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">🗣️</span>
-                    <h3>Prawdziwy język używany na co dzień</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">💃</span>
-                    <h3>Hiszpańska muzyka, filmy i kultura</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">💼</span>
-                    <h3>Hiszpański w pracy i biznesie</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">✈️</span>
-                    <h3>Hiszpański w podróży</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">🧸</span>
-                    <h3>Hiszpański dla dzieci i młodzieży</h3>
-                </div>
-                <div class="offer-card">
-                    <span class="offer-emoji">👥</span>
-                    <h3>Zajęcia indywidualne i grupowe</h3>
+        <section id="offer" class="section offer-section">
+            <div class="container">
+                <h2 class="section-title">Co oferuję?</h2>
+                <div class="offer-grid">
+                    <div class="offer-card">
+                        <span class="offer-emoji">🇪🇸</span>
+                        <h3>Hiszpański od A1 do C1</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">💬</span>
+                        <h3>Konwersacje od pierwszych zajęć</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">🗣️</span>
+                        <h3>Prawdziwy język używany na co dzień</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">💃</span>
+                        <h3>Hiszpańska muzyka, filmy i kultura</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">💼</span>
+                        <h3>Hiszpański w pracy i biznesie</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">✈️</span>
+                        <h3>Hiszpański w podróży</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">🧸</span>
+                        <h3>Hiszpański dla dzieci i młodzieży</h3>
+                    </div>
+                    <div class="offer-card">
+                        <span class="offer-emoji">👥</span>
+                        <h3>Zajęcia indywidualne i grupowe</h3>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">O Mnie</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Hola! Jestem Twoją przewodniczką po świecie hiszpańskiego 💃</h3>
-                    <p>Język hiszpański to moja <strong>pasja, styl życia i sposób na łączenie ludzi</strong>. Od lat
-                        uczę się, uczę innych i nieustannie odkrywam <strong>bogactwo kultury</strong> krajów
-                        hiszpańskojęzycznych, którą z radością przekazuję dalej. Kocham kontakt z ludźmi i naturalnie
-                        zarażam ich <strong>entuzjazmem do języka, muzyki i latynoskiego temperamentu</strong>.</p>
-                    <p>Ruch jest dla mnie równie ważny jak słowo. Tańczę salsę i bachatę, a od kilku lat z pełnym
-                        zaangażowaniem rozwijam się w tańcu orientalnym, który stał się moją kolejną przestrzenią
-                        wyrażania emocji i pasji. Taniec daje mi <strong>energię, wolność i inspirację</strong> – tak
-                        samo jak nauczanie.</p>
-                    <p>Uwielbiam sport, podróże i nowe wyzwania, bo to one <strong>poszerzają horyzonty</strong> i
-                        pozwalają patrzeć na świat z różnych perspektyw. Stale się rozwijam – obecnie jestem również w
-                        trakcie uzyskiwania uprawnień do <strong>tłumaczeń przysięgłych</strong> z języka hiszpańskiego,
-                        łącząc <strong>precyzję języka z odpowiedzialnością zawodową</strong>.</p>
-                    <p>Hiszpański to dla mnie nie tylko gramatyka – to <strong>emocje, kultura, relacje i
-                            energia</strong>, którą chcę dzielić się z innymi.</p>
-                    <p class="signature">Vamos a bailar con las palabras! <br><strong>– Twoja Nauczycielka</strong></p>
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">O Mnie</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Hola! Jestem Twoją przewodniczką po świecie hiszpańskiego 💃</h3>
+                        <p>Język hiszpański to moja <strong>pasja, styl życia i sposób na łączenie ludzi</strong>. Od
+                            lat
+                            uczę się, uczę innych i nieustannie odkrywam <strong>bogactwo kultury</strong> krajów
+                            hiszpańskojęzycznych, którą z radością przekazuję dalej. Kocham kontakt z ludźmi i
+                            naturalnie
+                            zarażam ich <strong>entuzjazmem do języka, muzyki i latynoskiego temperamentu</strong>.</p>
+                        <p>Ruch jest dla mnie równie ważny jak słowo. Tańczę salsę i bachatę, a od kilku lat z pełnym
+                            zaangażowaniem rozwijam się w tańcu orientalnym, który stał się moją kolejną przestrzenią
+                            wyrażania emocji i pasji. Taniec daje mi <strong>energię, wolność i inspirację</strong> –
+                            tak
+                            samo jak nauczanie.</p>
+                        <p>Uwielbiam sport, podróże i nowe wyzwania, bo to one <strong>poszerzają horyzonty</strong> i
+                            pozwalają patrzeć na świat z różnych perspektyw. Stale się rozwijam – obecnie jestem również
+                            w
+                            trakcie uzyskiwania uprawnień do <strong>tłumaczeń przysięgłych</strong> z języka
+                            hiszpańskiego,
+                            łącząc <strong>precyzję języka z odpowiedzialnością zawodową</strong>.</p>
+                        <p>Hiszpański to dla mnie nie tylko gramatyka – to <strong>emocje, kultura, relacje i
+                                energia</strong>, którą chcę dzielić się z innymi.</p>
+                        <p class="signature">Vamos a bailar con las palabras! <br><strong>– Twoja Nauczycielka</strong>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Skontaktuj się ze mną</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:carolalmadeoriente@gmail.com">carolalmadeoriente@gmail.com</a></p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p><a href="tel:+48796868967">796-868-967</a></p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-instagram"></i>
-                        <p><a href="https://instagram.com/fuegolingua_sin_limites"
-                                target="_blank">@fuegolingua_sin_limites</a></p>
-                    </div>
-                </div>
-
-                <form id="contactForm" class="contact-form">
-                    <h3>Napisz do mnie</h3>
-                    <div class="form-group">
-                        <label for="name">Imię</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Czy chcesz uczyć się od zera?</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="from_scratch" value="tak" checked> Tak</label>
-                            <label><input type="radio" name="from_scratch" value="nie"> Nie, mam już podstawy</label>
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Skontaktuj się ze mną</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:carolalmadeoriente@gmail.com">carolalmadeoriente@gmail.com</a></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:+48796868967">796-868-967</a></p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-instagram"></i>
+                            <p><a href="https://instagram.com/fuegolingua_sin_limites"
+                                    target="_blank">@fuegolingua_sin_limites</a></p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="purpose">Jaki jest Twój cel nauki?</label>
-                        <select id="purpose" name="purpose" required>
-                            <option value="" disabled selected>Wybierz cel...</option>
-                            <option value="hobby">Hobby i rozwój osobisty</option>
-                            <option value="podroze">Podróże i turystyka</option>
-                            <option value="praca">Praca i biznes</option>
-                            <option value="szkola">Szkoła / Studia</option>
-                            <option value="kultura">Kultura (muzyka, filmy, literatura)</option>
-                            <option value="inne">Inne</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Wiadomość</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Wyślij Wiadomość <i
-                            class="fas fa-paper-plane"></i></button>
-                    <div id="formStatus" class="form-status"></div>
-                </form>
+
+                    <form id="contactForm" class="contact-form">
+                        <h3>Napisz do mnie</h3>
+                        <div class="form-group">
+                            <label for="name">Imię</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Czy chcesz uczyć się od zera?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="from_scratch" value="tak" checked> Tak</label>
+                                <label><input type="radio" name="from_scratch" value="nie"> Nie, mam już
+                                    podstawy</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">Jaki jest Twój cel nauki?</label>
+                            <select id="purpose" name="purpose" required>
+                                <option value="" disabled selected>Wybierz cel...</option>
+                                <option value="hobby">Hobby i rozwój osobisty</option>
+                                <option value="podroze">Podróże i turystyka</option>
+                                <option value="praca">Praca i biznes</option>
+                                <option value="szkola">Szkoła / Studia</option>
+                                <option value="kultura">Kultura (muzyka, filmy, literatura)</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Wyślij Wiadomość <i
+                                class="fas fa-paper-plane"></i></button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="main-footer">
         <p>&copy; 2026 Fuego Lingua. Wszystkie prawa zastrzeżone.</p>
