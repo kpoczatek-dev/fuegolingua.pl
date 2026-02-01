@@ -26,7 +26,14 @@ body {
     color: var(--text-dark);
     /* Reference gradient logic */
     background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    overflow-x: hidden; /* Prevent horizontal scroll "floating" */
+    width: 100%;
+    position: relative;
+}
+
+html {
     overflow-x: hidden;
+    width: 100%;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -651,37 +658,7 @@ select:focus {
 .about-section::after { content: '🎸'; }
 
 
-/* --- MOBILE FIXES OVERRIDES --- */
-@media (max-width: 768px) {
-    /* Stabilize Header */
-    .main-header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 60px !important;
-        overflow: hidden !important;
-        transform: translateZ(0) !important;
-    }
-
-    /* Force small header logo */
-    .header-logo {
-        height: 35px !important;
-        width: auto !important;
-        margin-top: 5px !important;
-    }
-
-    /* Enlarge hero dancer image */
-    .hero-logo-img {
-        height: 280px !important;
-    }
-
-    /* Position hamburger */
-    .hamburger {
-        top: 5px !important; 
-        right: 15px !important;
-    }
-}
+/* Legacy mobile overrides removed - handled in media.css */
 
 
 /* --- Floating Call Button (Base) --- */
