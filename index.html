@@ -311,17 +311,19 @@
                     const targetId = this.getAttribute('href');
 
                     // 1. Mutate DOM (invalidate style)
-                    navLinks.classList.remove('active');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
 
-                    // 2. Schedule Layout/Paint for next frame to avoid forced synchronous layout
-                    requestAnimationFrame(() => {
+                    // 2. Push to macrotask queue to ensure styles are applied and layout is stable before scrolling
+                    setTimeout(() => {
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
                             targetElement.scrollIntoView({
                                 behavior: 'smooth'
                             });
                         }
-                    });
+                    }, 0);
                 });
             });
 
