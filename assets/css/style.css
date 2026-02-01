@@ -1,6 +1,6 @@
 :root {
     /* Colors inspired by the flyer gradient reference */
-    --primary-red: #d84315; /* Warmer terracotta/burnt orange instead of harsh red */
+    --primary-red: #bf360c; /* Darker terracotta to pass WCAG AA contrast on white */
     --primary-orange: #f57f17;
     --gold: #ffd740;
     --text-dark: #212121;
