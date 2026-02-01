@@ -651,55 +651,69 @@ select:focus {
 
 /* --- About Me Section --- */
 .about-section {
-    background: #fff;
+    background: var(--paper-bg); /* Warm cream background */
     position: relative;
     overflow: hidden;
+    padding: 5rem 0; /* More breathing room */
 }
 
 .about-content {
-    max-width: 1000px; /* Increased to fit image+text */
+    max-width: 1000px; /* Optimal reading width */
     margin: 0 auto;
     padding: 0 1rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    text-align: left; /* Reset text align for side-by-side */
+    display: block; /* Disable flex for float layout */
+}
+
+/* Clearfix for floated element */
+.about-content::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .about-image-wrapper {
-    flex: 0 0 400px; /* Fixed width for image column */
+    float: left; /* Text wraps around image */
+    width: 380px;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
     position: relative;
+    shape-outside: margin-box; /* Modern browser text wrapping optimization */
 }
 
 .about-img {
     width: 100%;
     height: auto;
     border-radius: 20px;
-    box-shadow: 20px 20px 0 var(--paper-bg), 0 10px 30px rgba(0,0,0,0.1); /* Artsy shadow */
+    box-shadow: 15px 15px 0 rgba(216, 67, 21, 0.1), 0 10px 30px rgba(0,0,0,0.1); /* Softer, branded shadow */
     transition: transform 0.3s ease;
     border: 5px solid #fff;
+    transform: rotate(-2deg); /* Constant playful tilt */
 }
 
 .about-img:hover {
-    transform: rotate(2deg) scale(1.02);
+    transform: rotate(0deg) scale(1.02); /* Straighten on hover */
 }
 
 .about-text {
-    flex: 1;
+    /* No special flex properties needed */
 }
 
 /* Mobile responsive for About section */
 @media (max-width: 900px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
     .about-image-wrapper {
-        flex: 0 0 auto;
+        float: none;
         width: 100%;
         max-width: 350px;
-        margin-bottom: 2rem;
+        margin: 0 auto 2rem auto;
+        transform: none;
+    }
+    
+    .about-img {
+        transform: rotate(0deg);
+    }
+    
+    .about-content {
+        text-align: center;
     }
 }
 .about-text h3 {
