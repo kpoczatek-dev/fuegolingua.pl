@@ -101,14 +101,50 @@ h1, h2, h3 {
     align-items: center;
 }
 
-.logo-img {
-    height: 60px;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    display: none; /* Hide text if present */
+}
+
+.header-logo {
+    height: 60px; /* Fit nicely in header */
     width: auto;
     transition: var(--transition);
 }
 
-.logo-img:hover {
+.header-logo:hover {
     transform: scale(1.05);
+}
+
+/* Hero Logo */
+.hero-logo-img {
+    height: 180px; /* Big logo in hero */
+    width: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.offer-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.offer-card:hover .offer-emoji {
+    transform: scale(1.2) rotate(10deg);
 }
 
 .nav-links {
@@ -153,8 +189,10 @@ h1, h2, h3 {
 
 .hero-section {
     min-height: 100vh;
-    /* Gradient inspired by flyer colors, NOT the image itself as BG */
-    background: radial-gradient(circle at center, #ffecb3 0%, #ffcc80 50%, #ef6c00 100%);
+    /* Gradient inspired by flyer colors, with logohero.png as background */
+    background: linear-gradient(rgba(255, 236, 179, 0.9), rgba(239, 108, 0, 0.8)), url('../images/logohero.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,8 +252,9 @@ h1, h2, h3 {
 .section { padding: 100px 0; }
 
 .offer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -227,6 +266,8 @@ h1, h2, h3 {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     transition: var(--transition);
     border: 1px solid rgba(0,0,0,0.05);
+    flex: 1 1 300px; /* Flex items grow and shrink, min-width 300px */
+    max-width: 400px; /* Prevent them from becoming too wide on large screens */
 }
 
 .offer-card:hover {
@@ -381,7 +422,56 @@ h1, h2, h3 {
     .hero-title { font-size: 3.5rem; }
 }
 
+/* --- Floating Call Button (Mobile) --- */
+.floating-call-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, var(--primary-red), var(--primary-orange)); /* Theme gradient */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.floating-call-btn:hover {
+    transform: scale(1.05);
+}
+
+.floating-call-btn i {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0.7); } /* Red pulse */
+    70% { box-shadow: 0 0 0 15px rgba(198, 40, 40, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(198, 40, 40, 0); }
+}
+
+/* --- Responsive Styles (Mobile Specific) --- */
 @media (max-width: 768px) {
+    /* Reduce header logo size on mobile to not overlap hamburger */
+    .header-logo {
+        height: 40px; 
+    }
+
+    /* Increase hamburger size for better touch target */
+    .hamburger {
+        display: block;
+        font-size: 2rem; /* Increased size */
+        padding: 10px; /* Bigger touch area */
+        color: var(--primary-red);
+    }
+    
     .nav-links {
         position: absolute;
         top: 100%;
@@ -393,6 +483,125 @@ h1, h2, h3 {
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         display: none;
     }
+    
     .nav-links.active { display: flex; }
-    .hamburger { display: block; }
+
+    .hero-title { font-size: 3rem; }
+    
+    /* Adjust hero logo for mobile */
+    .hero-logo-img { height: 120px; }
 }
+
+/* Hide floating button on desktop if desired, or keep it. 
+   User asked for it "on mobile", usually suggests hiding on desktop 
+   but it's useful everywhere. Let's keep it visible or hide? 
+   "przycisk ... ktory bedzie przekirowywac do wykonania telefonu ju na komorce" 
+   suggests mobile priority. Let's hide on large screens to be safe/cleaner */
+@media (min-width: 993px) {
+    .floating-call-btn {
+        display: none;
+    }
+}
+
+/* Spanish Decorative Elements */
+.section::before {
+    content: '💃'; /* Dancer emoji as a watermark */
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    transform: rotate(15deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section::after {
+    content: '🌹'; /* Rose emoji */
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    font-size: 6rem;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Specific adjustments for different sections to vary the icons */
+.offer-section::before { content: '☀️'; } /* Sun */
+.offer-section::after { content: '🥘'; } /* Paella/Food */
+
+.contact-section::before { content: '🐂'; font-size: 10rem; opacity: 0.05; } /* Bull */
+.contact-section::after { content: '🌵'; } /* Cactus */
+
+/* Smooth fade in for elements */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.offer-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Stagger animations for cards */
+.offer-card:nth-child(1) { animation-delay: 0.1s; }
+.offer-card:nth-child(2) { animation-delay: 0.2s; }
+.offer-card:nth-child(3) { animation-delay: 0.3s; }
+.offer-card:nth-child(4) { animation-delay: 0.4s; }
+.offer-card:nth-child(5) { animation-delay: 0.5s; }
+.offer-card:nth-child(6) { animation-delay: 0.6s; }
+.offer-card:nth-child(7) { animation-delay: 0.7s; }
+.offer-card:nth-child(8) { animation-delay: 0.8s; }
+
+
+/* Radio Group Styling */
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-transform: none; /* Override uppercase label style */
+}
+
+.radio-group input[type='radio'] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-orange);
+    cursor: pointer;
+}
+
+/* Select Styling */
+select {
+    width: 100%;
+    padding: 1rem;
+    padding-right: 2.5rem;
+    background-color: #f9f9f9;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23333%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3e%3cpolyline points=%226 9 12 15 18 9%22%3e%3c/polyline%3e%3c/svg%3e');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    appearance: none;
+}
+
+select:focus {
+    background-color: #fff;
+    border-color: var(--primary-orange);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(245, 127, 23, 0.1);
+}
+

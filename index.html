@@ -24,7 +24,7 @@
         <nav class="navbar">
             <div class="logo">
                 <a href="#hero">
-                    <img src="assets/images/logo.png" alt="Fuego Lingua" class="logo-img">
+                    <img src="assets/images/logohero.png" alt="Fuego Lingua" class="header-logo">
                 </a>
             </div>
             <ul class="nav-links">
@@ -41,6 +41,7 @@
 
     <section id="hero" class="hero-section">
         <div class="hero-content">
+            <img src="assets/images/logofoto.png" alt="Fuego Lingua" class="hero-logo-img">
             <h1 class="hero-title">Fuego Lingua</h1>
             <p class="hero-subtitle">Spanish Language Teacher</p>
             <p class="hero-text">Ucz się hiszpańskiego tak, jak się go czuje:<br>z energią, rytmem i prawdziwymi
@@ -54,31 +55,36 @@
             <h2 class="section-title">Co oferuję?</h2>
             <div class="offer-grid">
                 <div class="offer-card">
-                    <i class="fas fa-flag offer-icon"></i>
+                    <span class="offer-emoji">🇪🇸</span>
                     <h3>Hiszpański od A1 do C1</h3>
                 </div>
                 <div class="offer-card">
-                    <i class="fas fa-comments offer-icon"></i>
+                    <span class="offer-emoji">💬</span>
                     <h3>Konwersacje od pierwszych zajęć</h3>
                 </div>
                 <div class="offer-card">
-                    <i class="fas fa-music offer-icon"></i>
-                    <h3>Prawdziwy język</h3>
-                    <p>Używany na co dzień, muzyka, filmy i kultura</p>
+                    <span class="offer-emoji">🗣️</span>
+                    <h3>Prawdziwy język używany na co dzień</h3>
                 </div>
                 <div class="offer-card">
-                    <i class="fas fa-briefcase offer-icon"></i>
-                    <h3>Hiszpański w biznesie</h3>
-                    <p>W pracy i biznesie</p>
+                    <span class="offer-emoji">💃</span>
+                    <h3>Hiszpańska muzyka, filmy i kultura</h3>
                 </div>
                 <div class="offer-card">
-                    <i class="fas fa-plane offer-icon"></i>
+                    <span class="offer-emoji">💼</span>
+                    <h3>Hiszpański w pracy i biznesie</h3>
+                </div>
+                <div class="offer-card">
+                    <span class="offer-emoji">✈️</span>
                     <h3>Hiszpański w podróży</h3>
                 </div>
                 <div class="offer-card">
-                    <i class="fas fa-users offer-icon"></i>
+                    <span class="offer-emoji">🧸</span>
+                    <h3>Hiszpański dla dzieci i młodzieży</h3>
+                </div>
+                <div class="offer-card">
+                    <span class="offer-emoji">👥</span>
                     <h3>Zajęcia indywidualne i grupowe</h3>
-                    <p>Dla dzieci, młodzieży i dorosłych</p>
                 </div>
             </div>
         </div>
@@ -115,6 +121,25 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
+                        <label>Czy chcesz uczyć się od zera?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="from_scratch" value="tak" checked> Tak</label>
+                            <label><input type="radio" name="from_scratch" value="nie"> Nie, mam już podstawy</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose">Jaki jest Twój cel nauki?</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="" disabled selected>Wybierz cel...</option>
+                            <option value="hobby">Hobby i rozwój osobisty</option>
+                            <option value="podroze">Podróże i turystyka</option>
+                            <option value="praca">Praca i biznes</option>
+                            <option value="szkola">Szkoła / Studia</option>
+                            <option value="kultura">Kultura (muzyka, filmy, literatura)</option>
+                            <option value="inne">Inne</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="message">Wiadomość</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
@@ -130,6 +155,10 @@
         <p>&copy; 2026 Fuego Lingua. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
+    <a href="tel:+48796868967" class="floating-call-btn" title="Zadzwoń teraz">
+        <i class="fas fa-phone-alt"></i>
+        <span>Zadzwoń</span>
+    </a>
     <script src="assets/js/script.js"></script>
 </body>
 

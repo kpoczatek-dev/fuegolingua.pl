@@ -12,6 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = strip_tags(trim($_POST["name"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = strip_tags(trim($_POST["message"]));
+    
+    // New fields
+    $from_scratch = isset($_POST['from_scratch']) && $_POST['from_scratch'] === 'tak' ? 'Tak' : 'Nie (ma podstawy)';
+    $purpose = isset($_POST['purpose']) ? strip_tags(trim($_POST['purpose'])) : 'Nie podano';
 
     // Walidacja
     if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -21,8 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Treść wiadomości
-    $email_content = "Imię: $name\n";
-    $email_content .= "Email: $email\n\n";
+    $email_content = "Nowe zgłoszenie ze strony Fuego Lingua:\n\n";
+    $email_content .= "Imię: $name\n";
+    $email_content .= "Email: $email\n";
+    $email_content .= "Czy od zera?: $from_scratch\n";
+    $email_content .= "Cel nauki: $purpose\n\n";
     $email_content .= "Wiadomość:\n$message\n";
 
     // Nagłówki
