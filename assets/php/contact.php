@@ -2,7 +2,8 @@
 header('Content-Type: application/json');
 
 // Konfiguracja
-$toEmail = 'carolalmadeoriente@gmail.com'; // Adres docelowy
+$toEmail = 'carolalmadeoriente@gmail.com'
+; // Adres docelowy
 $subject = 'Nowa wiadomość ze strony Fuego Lingua';
 
 $response = ['success' => false, 'message' => ''];

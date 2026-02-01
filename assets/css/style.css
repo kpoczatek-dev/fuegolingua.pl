@@ -71,7 +71,7 @@ h1, h2, h3 {
     display: block;
     width: 60%;
     height: 4px;
-    background: linear-gradient(to right, var(--primary-red), var(--primary-orange)), url('../images/texture_red.png');
+    background: linear-gradient(to right, var(--primary-red), var(--primary-orange)), url('../images/texture_red.webp');
     margin: 10px auto 0;
 }
 
@@ -193,7 +193,7 @@ h1, h2, h3 {
 .hero-section {
     min-height: 100vh;
     /* Gradient inspired by flyer colors, with logohero.png as background */
-    background: linear-gradient(rgba(255, 236, 179, 0.9), rgba(239, 108, 0, 0.8)), url('../images/logohero.png');
+    background: linear-gradient(rgba(255, 236, 179, 0.9), rgba(239, 108, 0, 0.8)), url('../images/logohero.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -309,7 +309,7 @@ h1, h2, h3 {
 }
 
 .contact-info {
-    background: linear-gradient(rgba(198, 40, 40, 0.9), rgba(245, 127, 23, 0.9)), url('../images/texture_red.png');
+    background: linear-gradient(rgba(198, 40, 40, 0.9), rgba(245, 127, 23, 0.9)), url('../images/texture_red.webp');
     background-size: cover;
     color: #fff;
     padding: 3rem;
