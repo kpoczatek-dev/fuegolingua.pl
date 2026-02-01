@@ -266,9 +266,19 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    navLinks.classList.remove('active'); // Close mobile menu on click
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
+                    const targetId = this.getAttribute('href');
+
+                    // 1. Mutate DOM (invalidate style)
+                    navLinks.classList.remove('active');
+
+                    // 2. Schedule Layout/Paint for next frame to avoid forced synchronous layout
+                    requestAnimationFrame(() => {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
                     });
                 });
             });

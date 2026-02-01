@@ -24,12 +24,17 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    # 1 Year for static assets
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf)$">
         Header set Cache-Control "max-age=31536000, public"
+        Header unset Last-Modified
     </FilesMatch>
-    # 10 Minutes for HTML/PHP
     <FilesMatch "\.(html|htm|php)$">
         Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
+</IfModule>
+
+# Disable ETags (Use Cache-Control instead)
+FileETag None
+<IfModule mod_headers.c>
+    Header unset ETag
 </IfModule>
