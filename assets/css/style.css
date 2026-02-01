@@ -657,12 +657,51 @@ select:focus {
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 1000px; /* Increased to fit image+text */
     margin: 0 auto;
-    text-align: center;
     padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    text-align: left; /* Reset text align for side-by-side */
 }
 
+.about-image-wrapper {
+    flex: 0 0 400px; /* Fixed width for image column */
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0 var(--paper-bg), 0 10px 30px rgba(0,0,0,0.1); /* Artsy shadow */
+    transition: transform 0.3s ease;
+    border: 5px solid #fff;
+}
+
+.about-img:hover {
+    transform: rotate(2deg) scale(1.02);
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* Mobile responsive for About section */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image-wrapper {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 2rem;
+    }
+}
 .about-text h3 {
     font-size: 1.8rem;
     color: var(--primary-orange);
