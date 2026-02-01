@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuego Lingua - Hiszpański z Pasją</title>
+    <meta name="description"
+        content="Ucz się hiszpańskiego tak, jak się go czuje: z energią, rytmem i prawdziwymi emocjami. Fuego Lingua - Twój nauczyciel języka hiszpańskiego.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Placeholder for FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#hero">
+                    <img src="assets/images/logo.png" alt="Fuego Lingua" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Start</a></li>
+                <li><a href="#offer">Oferta</a></li>
+                <li><a href="#about">O Mnie</a></li>
+                <li><a href="#contact" class="btn-cta-nav">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Fuego Lingua</h1>
+            <p class="hero-subtitle">Spanish Language Teacher</p>
+            <p class="hero-text">Ucz się hiszpańskiego tak, jak się go czuje:<br>z energią, rytmem i prawdziwymi
+                emocjami.</p>
+            <a href="#contact" class="btn-primary">Rozpocznij Naukę</a>
+        </div>
+    </section>
+
+    <section id="offer" class="section offer-section">
+        <div class="container">
+            <h2 class="section-title">Co oferuję?</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <i class="fas fa-flag offer-icon"></i>
+                    <h3>Hiszpański od A1 do C1</h3>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-comments offer-icon"></i>
+                    <h3>Konwersacje od pierwszych zajęć</h3>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-music offer-icon"></i>
+                    <h3>Prawdziwy język</h3>
+                    <p>Używany na co dzień, muzyka, filmy i kultura</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-briefcase offer-icon"></i>
+                    <h3>Hiszpański w biznesie</h3>
+                    <p>W pracy i biznesie</p>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-plane offer-icon"></i>
+                    <h3>Hiszpański w podróży</h3>
+                </div>
+                <div class="offer-card">
+                    <i class="fas fa-users offer-icon"></i>
+                    <h3>Zajęcia indywidualne i grupowe</h3>
+                    <p>Dla dzieci, młodzieży i dorosłych</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Skontaktuj się ze mną</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:carolalmadeoriente@gmail.com">carolalmadeoriente@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p><a href="tel:+48796868967">796-868-967</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                        <p><a href="https://instagram.com/fuegolingua_sin_limites"
+                                target="_blank">@fuegolingua_sin_limites</a></p>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <h3>Napisz do mnie</h3>
+                    <div class="form-group">
+                        <label for="name">Imię</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Wyślij Wiadomość <i
+                            class="fas fa-paper-plane"></i></button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Fuego Lingua. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
