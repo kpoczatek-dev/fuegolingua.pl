@@ -1,0 +1,66 @@
+/* --- Responsive Styles (Media Queries) --- */
+
+/* Tablet Optimization */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .hero-title { font-size: 3.5rem; }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Stabilize header to prevent jumping during scroll */
+    /* --- Mobile Header Fixes --- */
+    .main-header {
+        height: 60px; /* Slightly smaller on mobile */
+    }
+
+    .header-logo {
+        height: 35px; /* Mobile logo size */
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.8rem;
+        color: var(--primary-red);
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .nav-links {
+        display: none; /* Hide default flex */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .nav-links li { margin: 10px 0; }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    /* Hero Image Mobile Size */
+    .hero-logo-img {
+        height: 280px; /* Reduced for mobile */
+    }
+    
+    .nav-links.active { display: flex; }
+
+    .hero-title { font-size: 3rem; }
+}
+
+/* Desktop Only Tweaks */
+@media (min-width: 993px) {
+    .floating-call-btn {
+        display: none;
+    }
+}
