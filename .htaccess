@@ -25,11 +25,11 @@
 
 <IfModule mod_headers.c>
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf)$">
-        Header set Cache-Control "max-age=31536000, public"
+        Header always set Cache-Control "max-age=31536000, public"
         Header unset Last-Modified
     </FilesMatch>
     <FilesMatch "\.(html|htm|php)$">
-        Header set Cache-Control "max-age=600, private, must-revalidate"
+        Header always set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>
 </IfModule>
 
