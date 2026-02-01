@@ -46,6 +46,13 @@ h1, h2, h3 {
 
 /* --- Components --- */
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
 .section-title {
     font-size: 3rem;
     text-align: center;
