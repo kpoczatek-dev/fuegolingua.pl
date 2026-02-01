@@ -24,11 +24,10 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-dark);
-    /* Reference gradient logic */
+    /* Simple warm gradient background for the whole page */
     background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-    overflow-x: hidden; /* Prevent horizontal scroll "floating" */
+    overflow-x: hidden;
     width: 100%;
-    position: relative;
 }
 
 html {
@@ -797,7 +796,25 @@ select:focus {
     gap: 0.5rem;
     font-weight: 400;
     cursor: pointer;
-    text-transform: none;
+}
+
+/* --- Offer Section Decoration --- */
+.offer-section {
+    background-color: #fff;
+    position: relative;
+    /* decorative border top/bottom inspired by Spanish tiles */
+    border-top: 4px solid var(--primary-orange);
+    border-bottom: 4px solid var(--primary-red);
+}
+
+.offer-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid #f0f0f0;
 }
 
 .radio-group input[type='radio'] {
@@ -834,16 +851,25 @@ select:focus {
 
 /* About Me Section */
 .about-section {
-    background: #fff;
+    /* Moved background here as requested */
+    /* Reduced overlay to 0.5 (50%) so the image is CLEARLY visible */
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 248, 225, 0.5)), url('../images/background.webp');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    overflow: hidden;
+    padding: 4rem 0;
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
-    padding: 0 1rem;
+    padding: 3rem;
+    /* White card to ensure text is readable against the original photo */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .about-text h3 {
