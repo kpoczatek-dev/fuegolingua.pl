@@ -24,9 +24,11 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+    # 1 Year for static assets
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
+    # 10 Minutes for HTML/PHP
     <FilesMatch "\.(html|htm|php)$">
         Header set Cache-Control "max-age=600, private, must-revalidate"
     </FilesMatch>

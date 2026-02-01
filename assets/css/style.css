@@ -152,7 +152,7 @@ h1, h2, h3 {
 }
 
 .btn-cta-nav:hover {
-    background-color: var(--primary-orange);
+    background-color: #bf360c; /* Darker shade of terracotta for better contrast */
 }
 
 .hamburger {
