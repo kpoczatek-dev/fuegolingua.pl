@@ -410,9 +410,33 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-.form-status { margin-top: 1rem; text-align: center; }
-.success { color: green; font-weight: bold; }
-.error { color: red; font-weight: bold; }
+.form-status { 
+    margin-top: 1.5rem; 
+    text-align: center;
+    min-height: 20px; /* Prevent layout jump */
+}
+
+.success { 
+    background-color: #e8f5e9; /* Light green theme */
+    color: #2e7d32; 
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #a5d6a7;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 4px 10px rgba(46, 125, 50, 0.1);
+}
+
+.error { 
+    background-color: #ffebee; /* Light red theme */
+    color: #c62828; 
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ef9a9a;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 4px 10px rgba(198, 40, 40, 0.1);
+}
 
 /* Footer */
 .main-footer {

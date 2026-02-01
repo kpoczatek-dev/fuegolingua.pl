@@ -41,9 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Wysyłka
     if (mail($toEmail, $subject, $email_content, $headers)) {
         $response['success'] = true;
-        $response['message'] = 'Wiadomość została wysłana!';
+        $response['message'] = '¡Gracias! Twoja wiadomość dotarła do mnie tanecznym krokiem 💃 Odpiszę najszybciej jak to możliwe!';
     } else {
-        $response['message'] = 'Wystąpił problem z wysłaniem wiadomości. Spróbuj ponownie później.';
+        $response['message'] = 'Ay, caramba! Coś poszło nie tak podczas wysyłania 🌵 Spróbuj ponownie lub zadzwoń do mnie bezpośrednio.';
     }
 } else {
     $response['message'] = 'Nieprawidłowe żądanie.';
